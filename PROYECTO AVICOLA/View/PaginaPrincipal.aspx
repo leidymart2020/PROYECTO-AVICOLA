@@ -165,7 +165,7 @@
                                  100% libres de antibióticos y químicos avícolas. </p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Learn More</a>
+            <a href="#" class="btn btn-primary">Ver mas..</a>
           </div>
         </div>
       </div>
@@ -183,7 +183,7 @@
             <br />
 
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Learn More</a>
+            <a href="#" class="btn btn-primary">Ver mas..</a>
           </div>
         </div>
       </div>
@@ -197,7 +197,7 @@
                                           
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Learn More</a>
+            <a href="#" class="btn btn-primary">Ver mas...</a>
           </div>
         </div>
       </div>
