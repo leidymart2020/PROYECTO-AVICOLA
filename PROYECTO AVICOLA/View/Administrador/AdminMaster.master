@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/Controller/Administrador/AdminMaster.master.cs" Inherits="View_Administrador_AdminMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bienvenido</title>
+
+    <!-- Bootstrap -->
+    <link href="css/heroic-features.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+      <link href="css/Custom-Cs.css" rel="stylesheet" />
+      <link href="css/StyleSheet.css" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+      <style type="text/css">
+          .auto-style1 {
+              border-radius: 50%;
+              width: 78px;
+              height: 54px;
+          }
+      </style>
+      <style>
+  .bg-1 {
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+  }
+  .bg-2 {
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 {
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  </style>
+
+  </head>    
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <!--navbar-->
+       <div class="fluid bg-2">
+  <div class="container  text-center " style="height: 151px">
+
+    <h3>GRANJA TEV S.A.S</h3>      
+    <p>Bienvenido</p>
+    <img src="/View/imagenes/tev.jpeg" class="auto-style1" alt="Cinque Terre"> 
+  </div>
+       </div>
+            </div>      
+           <!--navbar end--> 
+     
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+       
+            </asp:ContentPlaceHolder>
+    
+    </form>
+     <!--Footer start-->
+
+         <hr />
+
+       <footer class="footer-post">
+       <div class="container">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy;2020 Granja TEV S.A.S.com &middot;<a href="PaginaInicial.aspx">Home</a>&middot; <a href="#">About</a>&middot; <a href="#">Contactenos</a>&middot; <a href="#">Productos</a></p>
+
+       </div>
+      </footer>
+      <!--Footer end-->
+ 
+     <!--responsive start-->
+ 
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+       <!-- Include all compiled plugins (below), or include individual files as needed -->
+       <script src="js/bootstrap.min.js"></script>
+
+      <!--responsive end-->  
+</body>
+</html>
