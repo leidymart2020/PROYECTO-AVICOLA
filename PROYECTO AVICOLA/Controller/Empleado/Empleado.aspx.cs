@@ -11,4 +11,9 @@ public partial class View_Empleado_Empleado : System.Web.UI.Page
     {
 
     }
+
+    protected void B_Guardar_Click(object sender, EventArgs e)
+    {
+
+    }
 }
