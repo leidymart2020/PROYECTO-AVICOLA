@@ -2,6 +2,7 @@
 using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Configuration;
 using System.Data;
 using System.Linq;
@@ -11,44 +12,89 @@ using System.Linq;
 /// </summary>
 public class DaoGalpones
 {
-    public void insertarSector(EGalpones galpones)
+    public List<EGalpones> obtenerGalpones()
     {
-        DataTable Sector = new DataTable();
-        NpgsqlConnection conection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["Conexion2"].ConnectionString);
-
-        try
+        using (var db = new Mapeo())
         {
-            NpgsqlDataAdapter dataAdapter = new NpgsqlDataAdapter("sectores.f_insertar_galpon", conection);
-            dataAdapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            return (from uu in db.galpon
 
-            dataAdapter.SelectCommand.Parameters.Add("_nombre", NpgsqlDbType.Text).Value = galpones.Nombre;
-            dataAdapter.SelectCommand.Parameters.Add("_propietario", NpgsqlDbType.Text).Value = galpones.Propietario;
-            dataAdapter.SelectCommand.Parameters.Add("_direccion", NpgsqlDbType.Text).Value = galpones.Direccion;
-            dataAdapter.SelectCommand.Parameters.Add("_telefono", NpgsqlDbType.Integer).Value = galpones.Telefono;
-            
-            conection.Open();
-            dataAdapter.Fill(Sector);
+
+                    select new
+                    {
+                        uu,
+
+
+                    }).ToList().Select(m => new EGalpones
+                    {
+                        Id = m.uu.Id,
+                        Nombre = m.uu.Nombre,
+                        Empleado = m.uu.Empleado,
+                        Direccion = m.uu.Direccion,
+                        Telefono = m.uu.Telefono,
+                        Num_ponedoras = m.uu.Num_ponedoras
+
+
+
+                    }).ToList();
         }
-        catch (Exception Ex)
-        {
 
-            throw Ex;
-        }
-        finally
+
+
+    }
+
+    ///////////////////////////////actualizar////////////////////////////////////////////
+    public void actualizarGalpones(EGalpones galpon)
+    {
+        using (var db = new Mapeo())
         {
-            if (conection != null)
-            {
-                conection.Close();
-            }
+            EGalpones galpon2 = db.galpon.First();
+           galpon2.Nombre =galpon.Nombre;
+           galpon2.Empleado = galpon.Empleado;
+           galpon2.Direccion = galpon.Direccion;
+           galpon2.Telefono= galpon.Telefono;
+           galpon2.Num_ponedoras = galpon.Num_ponedoras;
+
+            db.galpon.Attach(galpon2);
+
+            var entry = db.Entry(galpon2);
+            entry.State = EntityState.Modified;
+            db.SaveChanges();
+
+
+        }
+    }
+
+    ///////////////////////////////eliminar galpones/////////////////////////////////////7
+    public void eliminarGalpones(EGalpones galpon)
+
+
+    {
+        using (var db = new Mapeo())
+        {
+            EGalpones galpon2 = db.galpon.First();
+            galpon2.Nombre = galpon.Nombre;
+            galpon2.Empleado = galpon.Empleado;
+            galpon2.Direccion = galpon.Direccion;
+            galpon2.Telefono = galpon.Telefono;
+            galpon2.Num_ponedoras = galpon.Num_ponedoras;
+
+            db.galpon.Attach(galpon2);
+
+            var entry = db.Entry(galpon2);
+            entry.State = EntityState.Deleted;
+            db.SaveChanges();
+        }
+    }
+    //////////////////////////////////insertar galpones//////////////////////////////
+    public void insertarGalpones(EGalpones galpon)
+    {
+        using (var db = new Mapeo())
+        {
+            db.galpon.Add(galpon);
+            db.SaveChanges();
         }
     }
 
 
 
-    public DaoGalpones()
-    {
-        //
-        // TODO: Agregar aquí la lógica del constructor
-        //
-    }
 }

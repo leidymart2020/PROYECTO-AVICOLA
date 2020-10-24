@@ -161,9 +161,9 @@
                  <td>&nbsp;&nbsp;</td>
                  <td class="auto-style1"> <label class="auto-style3">Username</label></td>
                  <td class="auto-style4">
-                     <asp:TextBox ID="TB_UserName" runat="server" CssClass="form-horizontal" placeholder="UserName"></asp:TextBox>
+                     <asp:TextBox ID="TB_UserName" runat="server" CssClass="form-horizontal" placeholder="UserName" OnTextChanged="TB_UserName_TextChanged"></asp:TextBox>
                  </td>
-                 <td><asp:RequiredFieldValidator ID="RFV_UserName" runat="server" ErrorMessage="*" SetFocusOnError="True" ControlToValidate="TB_UserName" ForeColor="Red"></asp:RequiredFieldValidator></td>
+                 <td><asp:RequiredFieldValidator ID="RFV_UserName" runat="server" ErrorMessage="*" SetFocusOnError="True" ControlToValidate="TB_UserName" ForeColor="Red" InitialValue="VG_Registrar"></asp:RequiredFieldValidator></td>
              </tr>
              <tr>
                  <td>&nbsp;</td>
@@ -176,7 +176,7 @@
                  <td class="auto-style1"> <label class="auto-style5" >Contraseña</label></td>
                  <td class="auto-style4"><asp:TextBox ID="TB_Clave" runat="server" CssClass="form-horizontal"   placeholder="Contraseña" TextMode="Password"></asp:TextBox></td>
                  <td>
-                     <asp:RequiredFieldValidator ID="RFV_Contraseña" runat="server" ErrorMessage="*" SetFocusOnError="True" ControlToValidate="TB_Clave" ForeColor="Red"></asp:RequiredFieldValidator>&nbsp;</td>
+                     <asp:RequiredFieldValidator ID="RFV_Contraseña" runat="server" ErrorMessage="*" SetFocusOnError="True" ControlToValidate="TB_Clave" ForeColor="Red" InitialValue="VG_Registrar"></asp:RequiredFieldValidator>&nbsp;</td>
              </tr>
              <tr>
                  <td>&nbsp;</td>
@@ -213,7 +213,7 @@
              <tr>
                  <td>&nbsp;</td>
                  <td class="auto-style1">&nbsp;</td>
-                 <td class="auto-style6"><asp:Button ID="B_Login" runat="server" Text="Registrar" Class="btn btn-success" OnClick="B_Login_Click" /></td>
+                 <td class="auto-style6"><asp:Button ID="B_Login" runat="server" Text="Registrar" Class="btn btn-success" OnClick="B_Login_Click" ValidationGroup="VG_Registrar" /></td>
                  <td>&nbsp;</td>
              </tr>
              <tr>

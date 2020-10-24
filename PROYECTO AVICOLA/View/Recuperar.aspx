@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="~/Controller/GenerarToken.aspx.cs" Inherits="View_GenerarToken" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="~/Controller/Recuperar.aspx.cs" Inherits="View_Recuperar" %>
 <!DOCTYPE html>
 
 <head>
@@ -10,27 +9,18 @@
     <title>LOGIN</title>
 
     <!-- Bootstrap -->
-
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
       <link href="css/Custom-Cs.css" rel="stylesheet" />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      
     <![endif]-->
-      <style type="text/css">
-          .auto-style1 {
-              width: auto;
-              height: 36px;
-              position: absolute;
-              top: 742px;
-              bottom: 9px;
-              left: 0;
-              right: 0;
-              margin: auto;
-          }
-      </style>
       </head>    
 <body>
     <form id="form1" runat="server">
@@ -51,8 +41,8 @@
             </div>
         </div>
 
-
-          
+  <!--Panel start-->
+   
          <!--Panel start-->
              
 
@@ -62,18 +52,10 @@
                        <td>&nbsp;</td>
                        <td>&nbsp;</td>
                        <td>&nbsp;</td>
-                   </tr>
-                   <tr>
-                       <td>&nbsp;</td>
-                       <td>&nbsp;</td>
                        <td>&nbsp;</td>
                    </tr>
                    <tr>
                        <td>&nbsp;</td>
-                       <td>&nbsp;</td>
-                       <td>&nbsp;</td>
-                   </tr>
-                   <tr>
                        <td>&nbsp;</td>
                        <td>&nbsp;</td>
                        <td>&nbsp;</td>
@@ -82,18 +64,10 @@
                        <td>&nbsp;</td>
                        <td>&nbsp;</td>
                        <td>&nbsp;</td>
-                   </tr>
-                   <tr>
-                       <td>&nbsp;</td>
-                       <td>&nbsp;</td>
                        <td>&nbsp;</td>
                    </tr>
                    <tr>
                        <td>&nbsp;</td>
-                       <td>&nbsp;</td>
-                       <td>&nbsp;</td>
-                   </tr>
-                   <tr>
                        <td>&nbsp;</td>
                        <td>&nbsp;</td>
                        <td>&nbsp;</td>
@@ -102,9 +76,37 @@
                        <td>&nbsp;</td>
                        <td>&nbsp;</td>
                        <td>&nbsp;</td>
+                       <td>&nbsp;</td>
                    </tr>
                    <tr>
                        <td>&nbsp;</td>
+                       <td>&nbsp;</td>
+                       <td>&nbsp;</td>
+                       <td>&nbsp;</td>
+                   </tr>
+                   <tr>
+                       <td>&nbsp;</td>
+                       <td>&nbsp;</td>
+                       <td>&nbsp;</td>
+                       <td>&nbsp;</td>
+                   </tr>
+                   <tr>
+                       <td>&nbsp;</td>
+                       <td>&nbsp;</td>
+                       <td>&nbsp;</td>
+                       <td>&nbsp;</td>
+                   </tr>
+                   <tr>
+                       <td>&nbsp;</td>
+                       <td>&nbsp;</td>
+                       <td>&nbsp;</td>
+                       <td>&nbsp;</td>
+                   </tr>
+                   <tr>
+                       <td>
+                           <br />
+                           <br />
+                       </td>
                        <td>
         <div class="form-gap"></div>
         <div class="container">
@@ -114,8 +116,8 @@
                         <div class="panel-body">
                             <div class="text-center">
                                 <h3><i class="fa fa-lock fa-4x"></i></h3>
-                                <h2 class="text-center">Olvidaste tu contraseña?</h2>
-                                <p>Puede restablecer su contraseña aqui.</p>
+                                <h2 class="text-center">Recuperar Contraseña</h2>
+                             
                                 <div class="panel-body">
 
                                     <form id="register-form" role="form" autocomplete="off" class="form" method="post">
@@ -123,21 +125,35 @@
                                         <div class="form-group">
                                                  <div class="input-group">
                                                  <span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
-                                                <asp:TextBox ID="TB_UserName" runat="server" CssClass="form-control"  placeholder="UserName"></asp:TextBox>
+                                                     <asp:Label ID="L_Contraseña" runat="server" Text="Digite su nueva contraseña:"></asp:Label>
+                                                <asp:TextBox ID="TB_Contraseña" runat="server" CssClass="form-control" placeholder="Digite su nueva contraseña"></asp:TextBox>
                                                 <!--<input id="email" name="email" placeholder="email address" class="form-control" type="email">-->
                                             </div>
                                          </div>
+                                        <div class="form-group">
+                                                 <div class="input-group">
+                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user color-blue"></i></span>
+                                                     <asp:Label ID="L_Repetir" runat="server" Text="Repita su nueva contraseña"></asp:Label>
+                                                <asp:TextBox ID="TB_Repetir" runat="server" CssClass="form-control" placeholder="Confirme su nueva contraseña"></asp:TextBox>
+                                                     <br />
+                                                <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare ="TB_Contraseña" ControlToValidate="TB_Repetir" ErrorMessage="CompareValidator"></asp:CompareValidator>
+                                           </div>
+                                         </div>     
+                                                     
+                                                <!--<input id="email" name="email" placeholder="email address" class="form-control" type="email">-->
+                                            
 
                                         <div class="form-group">
-                                            <asp:Button ID="B_Recuperar" runat="server" Text="Restablecer Contraseña" class="btn btn-lg btn-primary btn-block" OnClick="B_Recuperar_Click" />
+                                            <asp:Button ID="B_Cambiar" runat="server" Text="Cambiar Contraseña" class="btn btn-lg btn-dark btn-block" OnClick="B_Cambiar_Click" />
                                              <!--<input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Restablecer Contraseña" type="submit">-->
                                             <br />
                                              <br />
                                              <br />
-                                            <asp:Label ID="L_Mensaje" runat="server" Text="L_Mensaje"></asp:Label>
+                                          
                                         </div>
 
                                         <input type="hidden" class="hide" name="token" id="token" value="">
+                                        </div>
                                     </form>
 
                                 </div>
@@ -147,29 +163,50 @@
                 </div>
             </div>
         </div></td>
+                       <td>
+                           &nbsp;</td>
+                       <td>
+                           <br />
+                           <br />
+                           <br />
+                           <br />
+                           <br />
+                           <br />
+                           <br />
+                           <br />
+                           <br />
+                           <br />
+                           <br />
+                           <br />
+                           <br />
+                           </td>
+                   </tr>
+                   <tr>
+                       <td>&nbsp;</td>
+                       <td>&nbsp;</td>
+                       <td>&nbsp;</td>
                        <td>&nbsp;</td>
                    </tr>
                    <tr>
                        <td>&nbsp;</td>
                        <td>&nbsp;</td>
                        <td>&nbsp;</td>
-                   </tr>
-                   <tr>
-                       <td>&nbsp;</td>
-                       <td>&nbsp;</td>
                        <td>&nbsp;</td>
                    </tr>
                    <tr>
                        <td>&nbsp;</td>
                        <td>&nbsp;</td>
                        <td>&nbsp;</td>
-                   </tr>
-                   <tr>
-                       <td>&nbsp;</td>
-                       <td>&nbsp;</td>
                        <td>&nbsp;</td>
                    </tr>
                    <tr>
+                       <td>&nbsp;</td>
+                       <td>&nbsp;</td>
+                       <td>&nbsp;</td>
+                       <td>&nbsp;</td>
+                   </tr>
+                   <tr>
+                       <td>&nbsp;</td>
                        <td>&nbsp;</td>
                        <td>&nbsp;</td>
                        <td>&nbsp;</td>
@@ -182,27 +219,4 @@
          
 
         </form> 
-          
-        
-      <!--Footer start-->
 
-         <br />
-
-       <footer class="auto-style1">
-       <div class="container">
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy;2020 Granja TEV S.A.S.com &middot;<a href="PaginaInicial.aspx">Home</a>&middot; <a href="#">About</a>&middot; <a href="#">Contactenos</a>&middot; <a href="#">Productos</a></p>
-
-       </div>
-      </footer>
-      <!--Footer end-->
- 
-     <!--responsive start-->
- 
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-       <!-- Include all compiled plugins (below), or include individual files as needed -->
-       <script src="js/bootstrap.min.js"></script>
-
-      <!--responsive end-->  
-</body>
-</html>

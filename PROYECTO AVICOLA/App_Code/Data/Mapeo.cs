@@ -23,7 +23,8 @@ public class Mapeo:DbContext
     }
 
     public DbSet<EUsuario> usuario { get; set; }           //clase-tabla base de datos
-
+    public DbSet<EGalpones> galpon { get; set; }
+    public DbSet<EToken> token { get; set; }
     protected override void OnModelCreating(DbModelBuilder builder)
     {
         builder.HasDefaultSchema(this.schema);

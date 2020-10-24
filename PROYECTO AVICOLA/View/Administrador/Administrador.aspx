@@ -117,6 +117,7 @@
             </p>
           </div>
             &nbsp
+
           <div class="card-footer">
             <a href="#" class="btn btn-primary">Find Out More!</a>
           </div>

@@ -6,10 +6,18 @@ using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
+
+
+
+
 
 /// <summary>
 /// Descripción breve de DaoUser
 /// </summary>
+[Serializable]
+[Table("usuario", Schema = "usuario")]
 public class DaoUser
 {
     public DaoUser()
@@ -53,6 +61,10 @@ public class DaoUser
         return Usuario;
 
     }
+    public EUsuario getUserByUserName(string userName)
+    {
+        return new Mapeo().usuario.Where(x => x.UserName.ToUpper().Equals(userName.ToUpper())).FirstOrDefault();
+    }
 
     //////login2//////
     public EUsuario login2(EUsuario user)
@@ -61,5 +73,6 @@ public class DaoUser
         {
             return db.usuario.Where(x => x.UserName.Equals(user.UserName) && x.Clave.Equals(user.Clave)).FirstOrDefault();
         }
+
     }
 }
